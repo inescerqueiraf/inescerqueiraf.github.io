@@ -32,7 +32,14 @@ header+nav {
     font-size: 1.5em;
     border-bottom: 5px solid black;
     text-transform: uppercase;
+
 }
+
+header+nav>a:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
 
 nav>a {
     margin-right: 1em;
@@ -40,6 +47,11 @@ nav>a {
 
 #selected_tab {
     text-decoration: underline;
+}
+
+article figure {
+    width: fit-content;
+    text-align: center;
 }
 
 article figure>img {
@@ -51,6 +63,7 @@ main>nav>article {
     margin: 2em 3.5em;
 }
 
+
 #profilepic {
     width: 7em;
 }
@@ -58,7 +71,8 @@ main>nav>article {
 #contact_box {
     border: 5px solid black;
     margin: 10em auto;
-    width: 50%;
+    width: 300px;
+
 
     -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
@@ -76,7 +90,6 @@ main>nav>article {
     padding: 0.5em 1em;
     border-bottom: 5px solid black;
     margin-bottom: 2px;
-
     text-transform: uppercase;
 }
 
@@ -84,6 +97,11 @@ main>nav>article {
     margin: 0.5em 0;
     font-size: large;
     font-style: normal;
+}
+
+main>section {
+    text-transform: uppercase;
+
 }
 
 body {
