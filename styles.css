@@ -13,13 +13,20 @@
     margin: 0;
     padding: 0;
     font-family: "Sysfont";
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
 }
 
 /* Element Selector */
 body>header>a>h1 {
-    padding: 0.5em;
+    padding: 10px;
     padding-left: 30%;
     border-bottom: 5px solid black;
+    font-size: 3em;
 }
 
 a {
@@ -50,29 +57,39 @@ nav>a {
 }
 
 article figure {
+
     width: fit-content;
+    text-transform: uppercase;
     text-align: center;
+
 }
+
+/*ver isto depois*/
 
 article figure>img {
-    width: 7em;
+    width: 8em;
 }
 
+article {
+    height: 26vh;
+    width: 10vw;
+    float: left;
+}
+
+/*ver isto depois*/
 
 main>nav>article {
     margin: 2em 3.5em;
 }
 
-
 #profilepic {
-    width: 7em;
+    width: 8em;
 }
 
 #contact_box {
     border: 5px solid black;
     margin: 10em auto;
     width: 300px;
-
 
     -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
@@ -106,10 +123,90 @@ main>section {
 
 body {
     border: 5px solid black;
-    min-width: calc(100vw - 20px);
-    min-height: calc(100vh - 10px);
+    width: calc(100% - 20px);
+    height: calc(100% - 10px);
     -webkit-box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
     box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
     margin: 0 20px 10px 0;
+}
+
+/* Scrollbar styling */
+
+main {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border-bottom: 5px solid black;
+}
+
+#horizontal_scrollbar {
+    position: absolute;
+    width: calc(100% - 4em);
+    bottom: 0;
+    border-top: 5px solid black;
+    height: 4em;
+}
+
+#vertical_scrollbar {
+    position: absolute;
+    height: calc(100% - 4em);
+    right: 0;
+    top: 0;
+    border-left: 5px solid black;
+    width: 4em;
+}
+
+.squares {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 4em;
+    padding: 10px;
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+}
+
+#up_arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-bottom: 5px solid black;
+    width: 100%;
+}
+
+#down_arrow {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-top: 5px solid black;
+    width: 100%;
+}
+
+#left_arrow {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-right: 5px solid black;
+    height: 100%;
+}
+
+#right_arrow {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-left: 5px solid black;
+    height: 100%;
+}
+
+#left_arrow img,
+#right_arrow img {
+    height: 100%;
+    padding: 10px;
+}
+
+#up_arrow img,
+#down_arrow img {
+    width: 100%;
+    padding: 10px;
 }
