@@ -143,70 +143,66 @@ main {
 #horizontal_scrollbar {
     position: absolute;
     width: calc(100% - 4em);
+    height: 4em;
     bottom: 0;
     border-top: 5px solid black;
-    height: 4em;
 }
 
 #vertical_scrollbar {
     position: absolute;
     height: calc(100% - 4em);
+    width: 4em;
     right: 0;
     top: 0;
     border-left: 5px solid black;
-    width: 4em;
 }
 
-.squares {
+#scrollbars img {
+    padding: 10px;
+}
+
+#squares {
     position: absolute;
     bottom: 0;
     right: 0;
     width: 4em;
-    padding: 10px;
     border-top: 5px solid black;
     border-left: 5px solid black;
+}
+
+#left_arrow,
+#right_arrow,
+#up_arrow,
+#down_arrow {
+    position: absolute;
+}
+
+#up_arrow,
+#down_arrow {
+    width: 100%;
 }
 
 #up_arrow {
-    position: absolute;
-    right: 0;
     top: 0;
     border-bottom: 5px solid black;
-    width: 100%;
 }
 
 #down_arrow {
-    position: absolute;
-    right: 0;
     bottom: 0;
     border-top: 5px solid black;
-    width: 100%;
+}
+
+#left_arrow,
+#right_arrow {
+    height: 100%;
 }
 
 #left_arrow {
-    position: absolute;
     left: 0;
-    bottom: 0;
     border-right: 5px solid black;
-    height: 100%;
 }
 
 #right_arrow {
-    position: absolute;
     right: 0;
-    bottom: 0;
     border-left: 5px solid black;
-    height: 100%;
-}
-
-#left_arrow img,
-#right_arrow img {
-    height: 100%;
-    padding: 10px;
-}
-
-#up_arrow img,
-#down_arrow img {
-    width: 100%;
-    padding: 10px;
 }
