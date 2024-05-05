@@ -17,36 +17,83 @@
 }
 
 html {
-    height: 100%;
-    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+body {
+    border: 5px solid black;
+    /*
+    -webkit-box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
+    */
+    box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
+    margin: 0 20px 10px 0;
+
+    height: 100vh;
+}
+
+
+header {
+    /*
+    background-image: ;
+    background-repeat: repeat-x;
+    */
+    border-bottom: 5px solid black;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10vh;
+}
+
+header>div {
+    height: 33px;
+    width: 33px;
+    border: 5px solid;
+    margin-left: 60px;
 }
 
 /* Element Selector */
-body>header>a>h1 {
-    padding: 10px;
-    padding-left: 30%;
-    border-bottom: 5px solid black;
+header>a>h1 {
+    margin-left: 100px;
+    background-color: white;
+    display: inline;
     font-size: 3em;
+    padding-left: 5px;
+    padding-right: 5px;
+
 }
 
-a {
-    all: unset;
+a:link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
     cursor: pointer;
 }
 
-header+nav {
-    padding: 0.5em;
-    font-size: 1.5em;
-    border-bottom: 5px solid black;
-    text-transform: uppercase;
-
-}
-
-header+nav>a:hover {
+a:active {
     color: rgb(0, 0, 0);
     text-decoration: underline;
 }
 
+a:visited {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+nav {
+    padding: 0.5em;
+    font-size: 1.5em;
+    border-bottom: 5px solid black;
+    text-transform: uppercase;
+    height: 7vh;
+}
 
 nav>a {
     margin-right: 1em;
@@ -56,44 +103,106 @@ nav>a {
     text-decoration: underline;
 }
 
-article figure {
+/* revisto */
 
+main {
+    height: 81vh;
+    overflow-y: scroll;
+    overflow-x: visible;
+    --sb-track-color: #ffffff;
+    --sb-thumb-color: #000000;
+    --sb-size: 15px;
+}
+
+main::-webkit-scrollbar {
+    width: var(--sb-size)
+}
+
+main::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 0px;
+}
+
+main::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 0px;
+
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    main {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    justify-content: flex-start;
+    padding-top: 3%;
+    padding-right: 20%;
+    align-content: space-around;
+}
+
+figcaption>h3 {
+    /*
     width: fit-content;
+    
+    */
     text-transform: uppercase;
+    text-align: center;
+}
+
+a figure {
+    flex-basis: 25%;
     text-align: center;
 
 }
 
-/*ver isto depois*/
-
-article figure>img {
-    width: 8em;
+a figure img {
+    width: 50%;
 }
 
+/*
 article {
     height: 26vh;
     width: 10vw;
     float: left;
 }
 
-/*ver isto depois*/
 
 main>nav>article {
     margin: 2em 3.5em;
 }
+*/
 
 #profilepic {
     width: 8em;
 }
+
+/*ver isto depois*/
+
+
+/* revisto */
 
 #contact_box {
     border: 5px solid black;
     margin: 10em auto;
     width: 300px;
 
+    /*
     -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+    */
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+}
+
+#notes {
+    /*ver isto*/
+    width: 300px;
+
+
 }
 
 #contact_box h3 {
@@ -116,23 +225,17 @@ main>nav>article {
     font-style: normal;
 }
 
+/*
 main>section {
     text-transform: uppercase;
-
 }
+*/
 
-body {
-    border: 5px solid black;
-    width: calc(100% - 20px);
-    height: calc(100% - 10px);
-    -webkit-box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
-    box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
-    margin: 0 20px 10px 0;
-}
+
 
 /* Scrollbar styling */
-
+/*ver isto depois*/
+/*
 main {
     position: relative;
     width: 100%;
@@ -205,4 +308,28 @@ main {
 #right_arrow {
     right: 0;
     border-left: 5px solid black;
+}
+*/
+
+#aboutme_box {
+    border: 5px solid black;
+    margin-left: 35em;
+    width: 378px;
+
+
+    /*
+    -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+    */
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+}
+
+#aboutme_box>p {
+    padding: 0.5em 1em;
+    border-bottom: 5px solid black;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    margin: 0.5em 0;
+    font-size: large;
+    font-style: normal;
 }
