@@ -1,3 +1,16 @@
+/*
+    Nome: Inês Cerqueira
+    Nº Estudante: 3210487
+    Portfólio
+    3º, 2023-2024
+    2º Semestre
+    Unidade Curricular: Laboratório de Projeto II
+    Curso: DGM
+    ESAD.CR
+    Docente: Marco Heleno
+    04 Junho 2024
+*/
+
 @font-face {
     font-family: 'Sysfont';
     src: url('font/sysfont/sysfont.woff2') format('woff2'),
@@ -8,8 +21,7 @@
 
 /* Universal Selector */
 * {
-    /* outline: 1px dashed red;
-    outline-offset: -1px; */
+
     margin: 0;
     padding: 0;
     font-family: "Sysfont";
@@ -19,51 +31,51 @@
 html {
     overflow-y: hidden;
     overflow-x: hidden;
+    width: 100%;
+
 }
 
 
 body {
     border: 5px solid black;
-    /*
-    -webkit-box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
-    */
     box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
     margin: 0 20px 10px 0;
-
     height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 
 header {
-    /*
-    background-image: ;
-    background-repeat: repeat-x;
-    */
-    border-bottom: 5px solid black;
+    background-image: url(imagens/header.png);
+    background-repeat: repeat-y;
 
+    border-bottom: 5px solid black;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 10vh;
+    height: 6em;
 }
 
 header>div {
     height: 33px;
     width: 33px;
-    border: 5px solid;
+    border: 5px solid black;
+    background-color: white;
     margin-left: 60px;
+    padding: 10px;
 }
 
 /* Element Selector */
 header>a>h1 {
-    margin-left: 100px;
+    height: 100%;
     background-color: white;
-    display: inline;
+    margin-left: 100px;
     font-size: 3em;
     padding-left: 5px;
     padding-right: 5px;
-
 }
 
 a:link {
@@ -92,7 +104,7 @@ nav {
     font-size: 1.5em;
     border-bottom: 5px solid black;
     text-transform: uppercase;
-    height: 7vh;
+    height: 2.5em;
 }
 
 nav>a {
@@ -105,8 +117,10 @@ nav>a {
 
 /* revisto */
 
+/*scrollbar */
 main {
-    height: 81vh;
+    height: 100%;
+    width: 100%;
     overflow-y: scroll;
     overflow-x: visible;
     --sb-track-color: #ffffff;
@@ -115,7 +129,7 @@ main {
 }
 
 main::-webkit-scrollbar {
-    width: var(--sb-size)
+    width: var(--sb-size);
 }
 
 main::-webkit-scrollbar-track {
@@ -140,9 +154,8 @@ main::-webkit-scrollbar-thumb {
     flex-wrap: wrap;
     gap: 2%;
     justify-content: flex-start;
-    padding-top: 3%;
-    padding-right: 20%;
-    align-content: space-around;
+    padding-top: 2em;
+
 }
 
 figcaption>h3 {
@@ -177,9 +190,6 @@ main>nav>article {
 }
 */
 
-#profilepic {
-    width: 8em;
-}
 
 /*ver isto depois*/
 
@@ -190,20 +200,9 @@ main>nav>article {
     border: 5px solid black;
     margin: 10em auto;
     width: 300px;
-
-    /*
-    -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
-    */
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
 }
 
-#notes {
-    /*ver isto*/
-    width: 300px;
-
-
-}
 
 #contact_box h3 {
     padding: 0.2em;
@@ -225,111 +224,53 @@ main>nav>article {
     font-style: normal;
 }
 
-/*
-main>section {
-    text-transform: uppercase;
-}
-*/
 
-
-
-/* Scrollbar styling */
-/*ver isto depois*/
-/*
-main {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    border-bottom: 5px solid black;
-}
-
-#horizontal_scrollbar {
-    position: absolute;
-    width: calc(100% - 4em);
-    height: 4em;
-    bottom: 0;
-    border-top: 5px solid black;
-}
-
-#vertical_scrollbar {
-    position: absolute;
-    height: calc(100% - 4em);
-    width: 4em;
-    right: 0;
-    top: 0;
-    border-left: 5px solid black;
-}
-
-#scrollbars img {
-    padding: 10px;
-}
-
-#squares {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 4em;
-    border-top: 5px solid black;
-    border-left: 5px solid black;
-}
-
-#left_arrow,
-#right_arrow,
-#up_arrow,
-#down_arrow {
-    position: absolute;
-}
-
-#up_arrow,
-#down_arrow {
-    width: 100%;
-}
-
-#up_arrow {
-    top: 0;
-    border-bottom: 5px solid black;
-}
-
-#down_arrow {
-    bottom: 0;
-    border-top: 5px solid black;
-}
-
-#left_arrow,
-#right_arrow {
+#aboutme {
     height: 100%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    gap: 15%;
+    justify-content: center;
+    align-items: center;
 }
-
-#left_arrow {
-    left: 0;
-    border-right: 5px solid black;
-}
-
-#right_arrow {
-    right: 0;
-    border-left: 5px solid black;
-}
-*/
 
 #aboutme_box {
     border: 5px solid black;
-    margin-left: 35em;
-    width: 378px;
-
-
-    /*
-    -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
-    */
+    min-width: 400px;
+    max-width: 40%;
+    padding: 0.5em 1em;
+    font-size: large;
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
 }
 
 #aboutme_box>p {
-    padding: 0.5em 1em;
-    border-bottom: 5px solid black;
-    margin-bottom: 2px;
+    margin-bottom: 0.5em;
+}
+
+#aboutme_box strong,
+#aboutme_box h3 {
     text-transform: uppercase;
-    margin: 0.5em 0;
+}
+
+#aboutme_box li {
+    list-style: square;
+}
+
+#profilepic {
+    width: 20em;
+}
+
+main>article>p {
+    border: 5px solid black;
+    min-width: 400px;
+    max-width: 45%;
+    padding: 0.5em;
     font-size: large;
-    font-style: normal;
+
+
+}
+
+main>article>h2 {
+    text-transform: uppercase;
 }
