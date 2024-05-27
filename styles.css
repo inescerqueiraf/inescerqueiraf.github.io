@@ -11,6 +11,9 @@
     04 Junho 2024
 */
 
+/*Defini a tipografia do meu site, utilizando a regra font-face, com o src
+referenciando os ficheiros. Defini posteriormente as propriedades font-weight e
+font-style, para dar o valor "normal" às duas.*/
 @font-face {
     font-family: 'Sysfont';
     src: url('font/sysfont/sysfont.woff2') format('woff2'),
@@ -19,7 +22,16 @@
     font-style: normal;
 }
 
+
+
 /* Universal Selector */
+
+/*Defini as margens e o padding do meu ficheiro a 0, tal como aconselhado pelo
+professor. Para aplicar a minha tipografia a todo o texto do site, utilizei o
+universal selector e defini a propriedade font-family, com o valor "Sysfont".
+Defini a propriedade box-sizing, com o valor border-box, para que largura e a
+altura dos elementos sejam calculadas, mesmo quando o padding ou a border são
+específicados, ou não.*/
 * {
 
     margin: 0;
@@ -28,56 +40,101 @@
     box-sizing: border-box;
 }
 
+
+
+/* Element Selector */
+
+/*Defini a largura do meu html a 100%, para "forçar" o meu conteúdo a ocupar o
+comprimento da janela. Através das propriedades overflow-y e x, dei o valor
+hidden, de forma a que o conteúdo fique limitado à janela. Ou seja, o conteúdo
+que não cabe dentro desta, torna-se invisível.*/
 html {
+    width: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
-    width: 100%;
-
 }
 
 
+/*Utilizei a propriedade border, para dar uma linha de 5px ao meu body.
+Posteriormente, defini as propriedades height e width, atribuindo-lhes os
+valores 100vh e 100%, respetivamente, para obrigar o conteúdo do body, ocupar
+todo o espaço. Depois, defini a propriedade margin, com os seus respetivos
+valores. Atribui a propriedade display, com valor flex, para apresentar o meu
+contéudo flexível,no que diz respeito a blocos. Atribui a propriedade
+flex-direction, para definir que o valor seria em coluna, ou seja, que o
+conteúdo em bloco seja apresentado numa coluna vertical. Atribui a propriedade
+flex-wrap, com o valor nowrap, dando a indicação que não quero que o conteúdo
+flexível se "parta".*/
 body {
-    border: 5px solid black;
-    box-shadow: 15px 10px 0px 0px rgba(0, 0, 0, 1);
-    margin: 0 20px 10px 0;
+    border: 5px solid rgba(0, 0, 0, 1);
     height: 100vh;
+    max-height: 100%;
     width: 100%;
+    max-width: 100%;
+    margin: 0 20px 10px 0;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
 }
 
 
+/*Defini a propriedade border-bottem, para acrescentar uma linha inferior ao meu
+header.*/
 header {
-    background-image: url(imagens/header.png);
-    background-repeat: repeat-y;
+    border-bottom: 5px solid rgb(0, 0, 0);
+}
 
-    border-bottom: 5px solid black;
+
+/*Comecei por definir a propriedade background-image, com o valor url para o meu
+png (são as linhas do header), prosseguindo */
+header>div {
+    background-image: url(imagens/header_test.png);
+    background-repeat: no-repeat space;
+    margin: 5px 10px 10px 10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 6em;
+    height: 3em;
 }
 
-header>div {
-    height: 33px;
-    width: 33px;
-    border: 5px solid black;
-    background-color: white;
-    margin-left: 60px;
-    padding: 10px;
-}
 
-/* Element Selector */
-header>a>h1 {
+/**/
+header>div>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    background-color: white;
-    margin-left: 100px;
-    font-size: 3em;
-    padding-left: 5px;
-    padding-right: 5px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 60px;
+    padding: 0 20px;
+    padding-top: 5px;
 }
 
+
+/**/
+header>div>div>div {
+    height: 100%;
+    aspect-ratio: 1;
+    border: 5px solid rgb(0, 0, 0);
+}
+
+
+/**/
+header>div>a {
+    height: calc(100% + 1px);
+    background-color: rgb(255, 255, 255);
+    margin-left:
+        80px;
+    font-size: 1.5em;
+    padding: 0 20px;
+}
+
+
+/*Nestes próximos 4 passos, de uma forma geral, estilizei os meus links. Ou
+seja, todos têm a cor preta e a propriedade text-decoration, com exceção ao
+primeiro. No caso do hover, acrescentei ainda a propriedaxe cursor, definindo o
+seu valor como pointer (em suma, estilizei o cursor quando este passa por cima
+de um link.)*/
 a:link {
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -99,32 +156,49 @@ a:visited {
     text-decoration: underline;
 }
 
+/*Para a nav, comecei por definir o padding (0.5em) e a altura (2.5em), limitando o meu conteúdo a estes valores.
+Posteriormente, alterei a tamanho da minha fonte através da propriedade
+font-size e estilizei o meu texto para maiúsculas, com a propriedade
+text-transform.
+Por fim, defini ainda uma linha inferior, de 5px a preto, recorrendo à propriedade border-bottom.*/
 nav {
     padding: 0.5em;
-    font-size: 1.5em;
-    border-bottom: 5px solid black;
-    text-transform: uppercase;
     height: 2.5em;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    border-bottom: 5px solid rgb(0, 0, 0);
 }
 
+
+/*Defini uma margem à direita de 1em, utilizando a propriedade margin-right, aos
+separadores da minha nav*/
 nav>a {
     margin-right: 1em;
 }
 
+
+/*Defini a propriedade text-decoration, com o valor underline, para que o
+separador ao qual nos encontramos no site, aparecer estilizado com um
+sublinhado.*/
 #selected_tab {
     text-decoration: underline;
 }
 
-/* revisto */
 
-/*scrollbar */
+
+/*Começa scrollbar*/
+
+/*No que diz respeito à scrollbar, com a ajuda do professor, apenas defini a
+propriedade altura e largura, da minha main, com os valores de 100%. Face ao
+código restante, foi gerado pelo site "https://scrollbar.app/", fornecido também
+pelo professor. Desta forma, consegui estilizar as minhas scrollbars (y e x).*/
 main {
     height: 100%;
     width: 100%;
     overflow-y: scroll;
     overflow-x: visible;
-    --sb-track-color: #ffffff;
-    --sb-thumb-color: #000000;
+    --sb-track-color: rgb(255, 255, 255);
+    --sb-thumb-color: rgb(0, 0, 0);
     --sb-size: 15px;
 }
 
@@ -149,37 +223,41 @@ main::-webkit-scrollbar-thumb {
     }
 }
 
+/*Acaba scrollbar*/
+
+/**/
 #gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 2%;
     justify-content: flex-start;
-    padding-top: 2em;
+}
 
+#gallery a {
+    width: 200px;
+    padding: 2em;
 }
 
 figcaption>h3 {
-
     text-transform: uppercase;
-    text-align: center;
 }
 
 a figure {
-    flex-basis: 25%;
+    margin: auto;
     text-align: center;
-
+    width: fit-content;
+    max-width: 90%;
 }
 
 a figure img {
-    width: 50%;
+    width: 120px;
 }
 
 
 #contact_box {
-    border: 5px solid black;
-    margin: 15em auto;
-    width: 350px;
+    border: 5px solid rgb(0, 0, 0);
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+    width: 350px;
+    max-width: 90%;
 }
 
 
@@ -187,12 +265,12 @@ a figure img {
     padding: 0.2em;
     text-align: center;
     text-transform: uppercase;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid rgb(0, 0, 0);
 }
 
 #contact_box address {
     padding: 0.5em 1em;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid rgb(0, 0, 0);
     margin-bottom: 2px;
     text-transform: uppercase;
 }
@@ -206,22 +284,23 @@ a figure img {
 
 #aboutme {
     height: 100%;
-    width: 80%;
+    width: 90%;
     margin: auto;
     display: flex;
-    gap: 15%;
+    gap: 10%;
     justify-content: center;
     align-items: center;
 }
 
 #aboutme_box {
-    border: 5px solid black;
-    min-width: 400px;
+    border: 5px solid rgb(0, 0, 0);
+    width: 400px;
+    max-height: 90%;
     max-width: 40%;
+    overflow-y: scroll;
     padding: 0.5em 1em;
     font-size: large;
-    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
-
+    box-shadow: 5px 5px 0px 0px rgb(0, 0, 0);
 }
 
 #aboutme_box>p {
@@ -239,13 +318,14 @@ a figure img {
 
 #profilepic {
     width: 20em;
+    max-width: 40%;
 }
 
 main>article>.project_box {
-    border: 5px solid black;
-    min-width: 400px;
+    border: 5px solid rgb(0, 0, 0);
+    min-width: 15%;
     width: fit-content;
-    max-width: 40%;
+    max-width: 50%;
     padding: 0.5em;
     font-size: large;
     text-align: start;
@@ -253,17 +333,17 @@ main>article>.project_box {
     margin-bottom: 3em;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+    box-shadow: 5px 5px 0px 0px rgb(0, 0, 0);
 }
 
 
 article>h2.project_title {
     position: sticky;
-    background-color: white;
-    color: black;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     top: 0px;
     left: 0px;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid rgb(0, 0, 0);
 }
 
 article>h2 {
@@ -281,11 +361,10 @@ article section.project_images>figure {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-basis: 50%;
     width: 50%;
     padding: 3em 0;
     gap: 1em;
-    border: 5px solid black;
+    border: 5px solid rgb(0, 0, 0);
     padding: 2em 0;
 }
 
@@ -300,7 +379,7 @@ article section.project_video>figure>video {
     flex-direction: column;
     justify-content: center;
     width: 50%;
-    border: 5px solid black;
+    border: 5px solid rgb(0, 0, 0);
     margin: auto;
     margin-bottom: 1em;
 }
@@ -320,18 +399,18 @@ article section.project_assets>figure {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-basis: 33.33%;
+    flex-grow: 1;
     width: 33.33%;
     padding: 0.5em;
     gap: 2em;
-    border: 5px solid black;
+    border: 5px solid rgb(0, 0, 0);
 }
 
 article>figure>img {
     display: flex;
     width: 50%;
     margin: 2em auto 0 auto;
-    border: 5px solid black;
+    border: 5px solid rgb(0, 0, 0);
 }
 
 div.qr_code {
@@ -347,4 +426,32 @@ div.qr_code img {
 
 main>article {
     margin-bottom: 1em;
+}
+
+main.centered {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+main>figure#welcome_page_gif {
+    display: flex;
+    align-items: center;
+    height: 90%;
+    max-height: 100%;
+    width: fit-content;
+}
+
+main>figure#welcome_page_gif>a {
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+main>figure#welcome_page_gif>a>img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+
 }
