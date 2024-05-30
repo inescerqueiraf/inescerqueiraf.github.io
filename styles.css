@@ -11,122 +11,139 @@
     04 Junho 2024
 */
 
-/*Defini a tipografia do meu site, utilizando a regra font-face, com o src
-referenciando os ficheiros. Defini posteriormente as propriedades font-weight e
-font-style, para dar o valor "normal" às duas.*/
+
 @font-face {
     font-family: 'Sysfont';
+    /*Defini a tipografia do meu site.*/
     src: url('font/sysfont/sysfont.woff2') format('woff2'),
         url('font/sysfont/sysfont.woff') format('woff');
+    /*Referenciei os ficheiros da tipografia.*/
     font-weight: normal;
+    /*Defini o peso da tipografia.*/
     font-style: normal;
+    /*Defini o estilo da tipografia.*/
 }
 
 
 
 /* Universal Selector */
 
-/*Defini as margens e o padding do meu ficheiro a 0, tal como aconselhado pelo
-professor. Para aplicar a minha tipografia a todo o texto do site, utilizei o
-universal selector e defini a propriedade font-family, com o valor "Sysfont".
-Defini a propriedade box-sizing, com o valor border-box, para que largura e a
-altura dos elementos sejam calculadas, mesmo quando o padding ou a border são
-específicados, ou não.*/
 * {
 
     margin: 0;
+    /*Defini as margens.*/
     padding: 0;
+    /*Defini o padding.*/
     font-family: "Sysfont";
+    /*Apliquei a minha tipografia a todo o site.*/
     box-sizing: border-box;
+    /*Defini que a largura e a altura dos elementos sejam calculadas, mesmo quando o padding ou a border não são
+específicados.*/
 }
 
 
 
 /* Element Selector */
 
-/*Defini a largura do meu html a 100%, para "forçar" o meu conteúdo a ocupar o
-comprimento da janela. Através das propriedades overflow-y e x, dei o valor
-hidden, de forma a que o conteúdo fique limitado à janela. Ou seja, o conteúdo
-que não cabe dentro desta, torna-se invisível.*/
 html {
     width: 100%;
+    /*Defini a largura.*/
     overflow-y: hidden;
+    /*Defini que o conteúdo fique limitado à janela. Ou seja, o conteúdo
+    que não cabe dentro desta, torna-se invisível.*/
     overflow-x: hidden;
+    /*Defini que o conteúdo fique limitado à janela. Ou seja, o conteúdo
+    que não cabe dentro desta, torna-se invisível.*/
 }
 
 
-/*Utilizei a propriedade border, para dar uma linha de 5px ao meu body.
-Posteriormente, defini as propriedades height e width, atribuindo-lhes os
-valores 100vh e 100%, respetivamente, para obrigar o conteúdo do body, ocupar
-todo o espaço. Depois, defini a propriedade margin, com os seus respetivos
-valores. Atribui a propriedade display, com valor flex, para apresentar o meu
-contéudo flexível,no que diz respeito a blocos. Atribui a propriedade
-flex-direction, para definir que o valor seria em coluna, ou seja, que o
-conteúdo em bloco seja apresentado numa coluna vertical. Atribui a propriedade
-flex-wrap, com o valor nowrap, dando a indicação que não quero que o conteúdo
-flexível se "parta".*/
 body {
     border: 5px solid rgba(0, 0, 0, 1);
+    /*Defini uma linha preta, a 5px, para o limite da caixa.*/
     height: 100vh;
+    /*Defini a altura.*/
     max-height: 100%;
+    /*Defini a altura máxima.*/
     width: 100%;
+    /*Defini a largura.*/
     max-width: 100%;
+    /*Defini a largura máxima.*/
     margin: 0 20px 10px 0;
+    /*Defini as margens.*/
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     flex-direction: column;
+    /*Defini que a direção do conteúdo, fosse em coluna.*/
     flex-wrap: nowrap;
+    /*Defini que não queria que o conteúdo se ajuste (que se "parta").*/
 }
 
 
-/*Defini a propriedade border-bottem, para acrescentar uma linha inferior ao meu
-header.*/
 header {
     border-bottom: 5px solid rgb(0, 0, 0);
+    /*Defini uma linha inferior ao meu header.*/
 }
 
 
-/*Comecei por definir a propriedade background-image, com o valor url para o meu
-png (são as linhas do header), prosseguindo */
 header>div {
     background-image: url(imagens/header_test.png);
+    /*Adicionei a minha imagem (linha do header)*/
     background-repeat: no-repeat space;
-    margin: 5px 10px 10px 10px;
+    /*Defini que não queria que se repetisse, com espaçamento*/
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     justify-content: flex-start;
+    /*Defini que as linhas estariam posicionadas no início do meu container*/
     align-items: center;
+    /*Alinhei os elementos (linhas) ao centro*/
+    margin: 5px 10px 10px 10px;
+    /*Defini as margens da div*/
     height: 3em;
+    /*Defini a altura da div*/
 }
 
 
-/**/
 header>div>div {
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     justify-content: center;
+    /*Defini que o meu conteúdo, ficasse justificado ao centro.*/
     align-items: center;
+    /*Defini que o meu conteúdo, ficasse alinhado ao centro.*/
     height: 100%;
+    /*Defini que a altura a 100%.*/
     background-color: rgb(255, 255, 255);
+    /*Defini a cor do background a branco.*/
     margin-left: 60px;
+    /*Defini a margem esquerda a 60px.*/
     padding: 0 20px;
+    /*Defini o padding, sendo este 0 nos lados superior e inferior e 20px, nos lados esquerdo e direito.*/
     padding-top: 5px;
+    /*Como queria o padding superior diferente, defini o mesmo a 5px, isoladamente.*/
 }
 
 
-/**/
 header>div>div>div {
     height: 100%;
+    /*Defini a altura que o quadrado ocupa.*/
     aspect-ratio: 1;
+    /*Defini que o ratio teria de estar a 1, de forma a ser proporcional.*/
     border: 5px solid rgb(0, 0, 0);
+    /*Acrescentei linhas e defini a espessura e cor da minha linha (que fazem o quadrado).*/
 }
 
 
-/**/
 header>div>a {
     height: calc(100% + 1px);
+    /*Defini a altura que poderia ocupar o meu link (Inês Talvez).*/
     background-color: rgb(255, 255, 255);
-    margin-left:
-        80px;
+    /*Defini a cor do background a branco.*/
+    margin-left: 80px;
+    /*Defini a margem à esquerda do meu link.*/
     font-size: 1.5em;
+    /*Defini o tamanho da tipografia para 1.5em.*/
     padding: 0 20px;
+    /*Defini os paddings laterais ao meu link, para 20px.*/
 }
 
 
@@ -156,32 +173,29 @@ a:visited {
     text-decoration: underline;
 }
 
-/*Para a nav, comecei por definir o padding (0.5em) e a altura (2.5em), limitando o meu conteúdo a estes valores.
-Posteriormente, alterei a tamanho da minha fonte através da propriedade
-font-size e estilizei o meu texto para maiúsculas, com a propriedade
-text-transform.
-Por fim, defini ainda uma linha inferior, de 5px a preto, recorrendo à propriedade border-bottom.*/
 nav {
     padding: 0.5em;
+    /*Defini o padding.*/
     height: 2.5em;
+    /*Defini a altura.*/
     font-size: 1.5em;
+    /*Defini o tamanho da tipografia.*/
     text-transform: uppercase;
+    /*Estilizei o meu texto da descrição dos projetos para maiúsculas.*/
     border-bottom: 5px solid rgb(0, 0, 0);
+    /*Defini uma linha inferior, preta, a 5px, para o limite da nav.*/
 }
 
 
-/*Defini uma margem à direita de 1em, utilizando a propriedade margin-right, aos
-separadores da minha nav*/
 nav>a {
     margin-right: 1em;
+    /*Defini a margem.*/
 }
 
 
-/*Defini a propriedade text-decoration, com o valor underline, para que o
-separador ao qual nos encontramos no site, aparecer estilizado com um
-sublinhado.*/
 #selected_tab {
     text-decoration: underline;
+    /*Decorei o meu texto com um sublinhado.*/
 }
 
 
@@ -194,7 +208,9 @@ código restante, foi gerado pelo site "https://scrollbar.app/", fornecido tamb�
 pelo professor. Desta forma, consegui estilizar as minhas scrollbars (y e x).*/
 main {
     height: 100%;
+    /*Defini a altura.*/
     width: 100%;
+    /*Defini a largura.*/
     overflow-y: scroll;
     overflow-x: visible;
     --sb-track-color: rgb(255, 255, 255);
@@ -225,233 +241,479 @@ main::-webkit-scrollbar-thumb {
 
 /*Acaba scrollbar*/
 
-/**/
+
 #gallery {
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     flex-wrap: wrap;
+    /*Defini que queria que o conteúdo se ajuste (que se "parta").*/
     justify-content: flex-start;
+    /*Defini que o meu conteúdo, ficasse justificado ao início.*/
 }
 
 #gallery a {
     width: 200px;
+    /*Defini a largura dos meus ícones.*/
     padding: 2em;
+    /*Defini o padding dos meus ícones.*/
 }
 
 figcaption>h3 {
     text-transform: uppercase;
+    /*Estilizei o meu texto da descrição dos projetos para maiúsculas.*/
 }
 
 a figure {
     margin: auto;
+    /*Defini a margem para automática.*/
     text-align: center;
+    /*Alinhei o texto ao centro.*/
     width: fit-content;
+    /*Defini a largura, para esta se adaptar ao tamanho do conteúdo.*/
     max-width: 90%;
+    /*Defini uma largura máxima.*/
 }
 
 a figure img {
     width: 120px;
+    /*Defini a largura da minha imagem.*/
 }
 
 
 #contact_box {
     border: 5px solid rgb(0, 0, 0);
-    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+    /*Defini uma linha preta, a 5px, para o limite da caixa.*/
+    box-shadow: 5px 5px 0px 0px rgb(0, 0, 0);
+    /*Com a ajuda de um generator, defini a sombra da caixa, a preto, com 5px de espessura.*/
     width: 350px;
+    /*Defini a largura da minha caixa.*/
     max-width: 90%;
+    /*Defini a largura máxima da minha caixa.*/
 }
 
 
 #contact_box h3 {
     padding: 0.2em;
+    /*Defini o padding do título da caixa.*/
     text-align: center;
+    /*Alinhei o texto ao centro.*/
     text-transform: uppercase;
+    /*Estilizei o meu texto da descrição dos projetos para maiúsculas.*/
     border-bottom: 5px solid rgb(0, 0, 0);
+    /*Defini uma linha inferior, preta, a 5px, para o limite do título.*/
 }
 
 #contact_box address {
     padding: 0.5em 1em;
+    /*Defini um padding para os contactos.*/
     border-bottom: 5px solid rgb(0, 0, 0);
+    /*Defini uma linha inferior, preta, a 5px, para o limite do título.*/
     margin-bottom: 2px;
+    /*Defini uma margem inferior.*/
     text-transform: uppercase;
+    /*Estilizei o meu texto da descrição dos projetos para maiúsculas.*/
 }
 
 #contact_box address>p {
     margin: 0.5em 0;
+    /*Defini as margens do texto.*/
     font-size: large;
+    /*Defini o tamanho da minha tipografia, para grande.*/
     font-style: normal;
+    /*Defini o estilo da minha tipografia, para normal.*/
 }
 
 
 #aboutme {
     height: 100%;
+    /*Defini a altura da caixa do sobre mim. */
     width: 90%;
+    /*Defini a largura da caixa.*/
     margin: auto;
+    /*Defini a margem para auto, ou seja, para se adaptar.*/
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     gap: 10%;
+    /*Defini um espaçamento de 10%.*/
     justify-content: center;
+    /*Defini que o meu conteúdo, ficasse justificado ao centro.*/
     align-items: center;
+    /*Alinhei os elementos ao centro.*/
 }
 
 #aboutme_box {
     border: 5px solid rgb(0, 0, 0);
+    /*Defini uma linha preta, a 5px, para o limite da caixa.*/
     width: 400px;
+    /*Defini a largura.*/
     max-height: 90%;
+    /*Defini uma altura máxima.*/
     max-width: 40%;
+    /*Defini a largura máxima.*/
     overflow-y: scroll;
+    /*Defini que queria que o conteúdo que não se vê na caixa inicialmente, fosse possível ser visto, através da interação scroll.*/
     padding: 0.5em 1em;
+    /*Defini o padding.*/
     font-size: large;
+    /*Defini o tamanho da minha tipografia, para grande.*/
     box-shadow: 5px 5px 0px 0px rgb(0, 0, 0);
+    /*Com a ajuda de um generator, defini a sombra da caixa, a preto, com 5px de espessura.*/
 }
 
 #aboutme_box>p {
     margin-bottom: 0.5em;
+    /*Defini uma margem inferior.*/
 }
 
 #aboutme_box strong,
 #aboutme_box h3 {
     text-transform: uppercase;
+    /*Estilizei o meu texto para maiúsculas.*/
 }
 
 #aboutme_box li {
     list-style-type: square;
+    /*Defini que o estilo da lista, fosse alterado para um quadrado.*/
 }
 
 #profilepic {
     width: 20em;
+    /*Defini a largura.*/
     max-width: 40%;
+    /*Defini a largura máxima.*/
 }
 
 main>article>.project_box {
     border: 5px solid rgb(0, 0, 0);
+    /*Defini uma linha preta, a 5px, para o limite da caixa.*/
     min-width: 15%;
+    /*Defini uma largura mínima.*/
     width: fit-content;
+    /*Defini que a largura se adapta.*/
     max-width: 50%;
+    /*Defini a largura máxima.*/
     padding: 0.5em;
+    /*Defini o padding.*/
     font-size: large;
+    /*Defini o tamanho da minha tipografia, para grande.*/
     text-align: start;
     margin-top: 3em;
+    /*Defini uma margem superior.*/
     margin-bottom: 3em;
+    /*Defini uma margem inferior.*/
     margin-left: auto;
+    /*Defini a margem.*/
     margin-right: auto;
+    /*Defini a margem.*/
     box-shadow: 5px 5px 0px 0px rgb(0, 0, 0);
+    /*Com a ajuda de um generator, defini a sombra da caixa, a preto, com 5px de espessura.*/
 }
 
 
 article>h2.project_title {
     position: sticky;
+    /*Defini o título como sticky, ou seja, mantém-se fixado na página, apesar do scroll.*/
     background-color: rgb(255, 255, 255);
+    /*Defini a cor do fundo.*/
     color: rgb(0, 0, 0);
+    /*Defini a cor do título.*/
     top: 0px;
+    /*Defini que estava a 0px do topo.*/
     left: 0px;
+    /*Defini que estava a 0px da esquerda.*/
     border-bottom: 5px solid rgb(0, 0, 0);
+    /*Defini uma linha inferior, preta, a 5px, para o limite da caixa.*/
 }
 
 article>h2 {
     text-align: center;
+    /*Alinhei o texto ao centro.*/
     text-transform: uppercase;
+    /*Estilizei o meu texto para maiúsculas.*/
     padding: 1em;
+    /*Defini o padding.*/
 }
 
 article section.project_images {
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     flex-wrap: wrap;
+    /*Defini que queria que o conteúdo se ajuste (que se "parta").*/
 }
 
 article section.project_images>figure {
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     flex-direction: column;
+    /*Defini a direção do conteúdo como coluna.*/
     justify-content: center;
+    /*Defini que o meu conteúdo, ficasse justificado ao centro.*/
     width: 50%;
+    /*Defini a largura.*/
     padding: 3em 0;
+    /*Defini o padding.*/
     gap: 1em;
+    /*Defini um espaçamento de 1em.*/
     border: 5px solid rgb(0, 0, 0);
+    /*Defini uma linha preta, a 5px, para o limite da caixa.*/
     padding: 2em 0;
+    /*Defini o padding.*/
 }
 
 article figcaption>h3 {
     text-transform: uppercase;
+    /*Estilizei o meu texto para maiúsculas.*/
     text-align: center;
+    /*Alinhei o texto ao centro.*/
     padding: 0.5em;
+    /*Defini o padding.*/
 }
 
 article section.project_video>figure>video {
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     flex-direction: column;
+    /*Defini a direção do conteúdo como coluna.*/
     justify-content: center;
+    /*Defini que o meu conteúdo, ficasse justificado ao centro.*/
     width: 50%;
+    /*Defini a largura.*/
     border: 5px solid rgb(0, 0, 0);
+    /*Defini uma linha preta, a 5px, para o limite da caixa.*/
     margin: auto;
+    /*Defini a margem.*/
     margin-bottom: 1em;
+    /*Defini uma margem inferior.*/
 }
 
 article section.project_video>figure>figcaption {
     text-transform: uppercase;
+    /*Estilizei o meu texto para maiúsculas.*/
     text-align: center;
+    /*Alinhei o texto ao centro.*/
     margin-bottom: 1em;
+    /*Defini uma margem inferior.*/
 }
 
 article section.project_assets {
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     flex-wrap: wrap;
+    /*Defini que queria que o conteúdo se ajuste (que se "parta").*/
 }
 
 article section.project_assets>figure {
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     flex-direction: column;
+    /*Defini a direção do conteúdo como coluna.*/
     justify-content: center;
+    /*Defini que o meu conteúdo, ficasse justificado ao centro.*/
     flex-grow: 1;
+    /*Defini quanto o meu elemento pode crescer dentro do container.*/
     width: 33.33%;
+    /*Defini a largura.*/
     padding: 0.5em;
+    /*Defini o padding.*/
     gap: 2em;
+    /*Defini um espaçamento de 2em.*/
     border: 5px solid rgb(0, 0, 0);
+    /*Defini uma linha preta, a 5px, para o limite da caixa.*/
 }
 
 article>figure>img {
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     width: 50%;
+    /*Defini a largura.*/
     margin: 2em auto 0 auto;
+    /*Defini a margem.*/
     border: 5px solid rgb(0, 0, 0);
+    /*Defini uma linha preta, a 5px, para o limite da caixa.*/
 }
 
 div.qr_code {
     width: 100%;
+    /*Defini a largura.*/
     margin: 2em auto;
+    /*Defini a margem.*/
     text-align: center;
+    /*Defini que o meu texto está alinhado ao centro.*/
 }
 
 div.qr_code img {
     width: 25%;
+    /*Defini a largura.*/
     margin: 0 auto;
+    /*Defini a margem.*/
 }
 
 main>article {
     margin-bottom: 1em;
+    /*Defini uma margem inferior.*/
 }
 
 main.centered {
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     width: 100%;
+    /*Defini a largura.*/
     justify-content: center;
+    /*Defini que o meu conteúdo, ficasse justificado ao centro.*/
     align-items: center;
+    /*Defini que o meu conteúdo, ficasse alinhado ao centro.*/
 }
 
 main>figure#welcome_page_gif {
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     align-items: center;
+    /*Defini que o meu conteúdo, ficasse alinhado ao centro.*/
     height: 90%;
+    /*Defini a altura.*/
     max-height: 100%;
+    /*Defini a altura máxima.*/
     width: fit-content;
+    /*Defini a largura.*/
 }
 
 main>figure#welcome_page_gif>a {
     display: flex;
+    /*Defini que a apresentação do conteúdo, fosse flexível.*/
     max-width: 100%;
+    /*Defini a largura máxima.*/
     max-height: 100%;
+    /*Defini a altura máxima.*/
 }
 
 main>figure#welcome_page_gif>a>img {
     max-width: 100%;
+    /*Defini a largura máxima.*/
     max-height: 100%;
+    /*Defini a altura máxima.*/
     object-fit: contain;
+    /*Defini que a imagem mantém o seu rácio, mas redimensiona-se conforme a dimensão dada.*/
 
+}
+
+
+/*Responsividade*/
+@media only screen and (max-width: 768px) {
+    header>div>div {
+        display: none;
+        /*Defini que o quadrado fosse removido.*/
+    }
+
+    header>div>a {
+        margin: auto;
+        /*Defini a margem.*/
+        padding: 0 15px;
+        /*Defini o padding.*/
+    }
+
+    nav {
+        font-size: 1.2em;
+        /*Defini o tamanho da tipografia.*/
+    }
+
+    #aboutme_box {
+        max-width: 90%;
+        /*Defini a largura máxima.*/
+    }
+
+    #profilepic {
+        display: none;
+        /*Defini que a imagem fosse removida.*/
+    }
+
+    main>article>.project_box {
+        max-width: 75%;
+        /*Defini a largura máxima.*/
+    }
+
+    article>figure>img {
+        width: 75%;
+        /*Defini a largura.*/
+    }
+
+    article section.project_assets>figure {
+        width: 50%;
+        /*Defini a largura.*/
+    }
+
+    article section.project_images>figure {
+        width: 100%;
+        /*Defini a largura.*/
+    }
+
+    article section.project_video>figure>video {
+        width: 75%;
+        /*Defini a largura.*/
+    }
+
+    div.qr_code img {
+        width: 30%;
+        /*Defini a largura.*/
+    }
+
+    main::-webkit-scrollbar {
+        width: 0;
+        /*Defini a largura.*/
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    header>div>a {
+        font-size: 1.3em;
+        /*Defini o tamanho da tipografia.*/
+    }
+
+    nav {
+        font-size: 1em;
+        /*Defini o tamanho da tipografia.*/
+    }
+
+    nav>a {
+        margin-right: 0.5em;
+        /*Defini a margem.*/
+    }
+
+    #gallery {
+        display: flex;
+        /*Defini que a apresentação do conteúdo, fosse flexível.*/
+        flex-direction: column;
+        /*Defini que a disposição dos meus elementos é em coluna.*/
+        align-items: center;
+        /*Defini que os elementos estão alinhados ao centro.*/
+    }
+
+    main>article>.project_box {
+        max-width: 90%;
+        /*Defini a largura máxima.*/
+    }
+
+    article>figure>img {
+        width: 90%;
+        /*Defini a largura.*/
+    }
+
+    article>h2.project_title {
+        font-size: 1.2em;
+        /*Defini o tamanho da tipografia.*/
+    }
+
+    article section.project_assets>figure {
+        width: 100%;
+        /*Defini a largura.*/
+    }
+
+    article section.project_video>figure>video {
+        width: 90%;
+        /*Defini a largura.*/
+    }
+
+    div.qr_code img {
+        width: 40%;
+        /*Defini a largura.*/
+    }
 }
