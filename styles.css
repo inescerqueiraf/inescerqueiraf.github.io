@@ -305,7 +305,7 @@ a figure img {
 
 #contact_box address {
     padding: 0.5em 1em;
-    /*Defini um padding para os contactos.*/
+    /*Defini um padding para os contact.*/
     border-bottom: 5px solid rgb(0, 0, 0);
     /*Defini uma linha inferior, preta, a 5px, para o limite do título.*/
     margin-bottom: 2px;
