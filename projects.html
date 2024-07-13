@@ -1,0 +1,15 @@
+---
+layout: base
+tags: pages
+title: work
+date: 2024-05-23
+---
+
+<div class="projects-wrapper">
+  {% for project in projects %}
+	<a class="icon" href="/projects/{{ project.fields.title | slugify }}">
+		{% icon project.fields.icon %}
+	  	<h2>{{ project.fields.title }}</h2>
+	</a>
+  {% endfor %}
+</div>

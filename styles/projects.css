@@ -1,0 +1,35 @@
+div.projects-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+
+  padding: 50px;
+}
+
+a.icon {
+  width: 150px;
+  text-align: center;
+}
+
+a.icon:hover {
+  text-decoration: none;
+}
+
+a.icon:hover h2 {
+  /* border-bottom: 5px solid var(--foreground-color); */
+  font-weight: bold;
+}
+
+a.icon h2 {
+  margin: auto;
+  width: fit-content;
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: normal;
+  border-bottom: 5px solid transparent;
+}
+
+a.icon > div {
+  margin: auto;
+}

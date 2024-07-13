@@ -1,0 +1,26 @@
+main {
+  --sb-track-color: var(--background-color);
+  --sb-thumb-color: var(--foreground-color);
+  --sb-size: 40px;
+}
+
+main::-webkit-scrollbar {
+  width: var(--sb-size);
+  height: var(--sb-size);
+}
+
+main::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+}
+
+main::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 1px;
+  border: 5px solid var(--sb-track-color);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  main {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}

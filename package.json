@@ -1,0 +1,27 @@
+{
+  "name": "inescerqueira",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "main": ".eleventy.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "debug": "DEBUG=* npx @11ty/eleventy --dryrun"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inescerqueiraf/inescerqueira.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inescerqueiraf/inescerqueira/issues"
+  },
+  "homepage": "https://github.com/inescerqueiraf/inescerqueira#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "2.0.1",
+    "@contentful/rich-text-html-renderer": "16.6.1",
+    "contentful": "10.12.6",
+    "dotenv": "16.4.5"
+  }
+}

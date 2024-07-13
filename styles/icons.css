@@ -1,0 +1,285 @@
+.file-icon {
+  width: 120px;
+  height: 150px;
+
+  position: relative;
+
+  border: 5px solid var(--foreground-color);
+}
+
+.file-icon .folded-corner {
+  width: 30px;
+  height: 30px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  transform: translate(5px, -5px);
+
+  border: 5px solid;
+  border-color: var(--background-color) var(--background-color)
+    var(--foreground-color) var(--foreground-color);
+}
+
+.file-icon .folded-corner div {
+  height: 5px;
+  width: 5px;
+  background-color: var(--foreground-color);
+}
+.file-icon .folded-corner div:nth-child(1) {
+  position: relative;
+  transform: translate(-5px, -5px);
+}
+.file-icon .folded-corner div:nth-child(2) {
+  position: relative;
+  transform: translate(0px, -5px);
+}
+.file-icon .folded-corner div:nth-child(3) {
+  position: relative;
+  transform: translate(5px, -5px);
+}
+.file-icon .folded-corner div:nth-child(4) {
+  position: relative;
+  transform: translate(10px, -5px);
+}
+.file-icon .folded-corner div:nth-child(5) {
+  position: relative;
+  transform: translate(15px, -5px);
+}
+.file-icon .folded-corner div:nth-child(6) {
+  position: relative;
+  transform: translate(20px, -5px);
+}
+
+.file-icon .line {
+  display: flex;
+  height: 5px;
+  width: 80px;
+
+  position: relative;
+  left: 15px;
+
+  background-color: var(--foreground-color);
+}
+.whitespace {
+  height: 5px;
+  width: 5px;
+
+  background-color: var(--background-color);
+}
+
+.file-icon .line:nth-child(1) {
+  top: 40px;
+}
+.file-icon .line .whitespace:nth-child(1) {
+  transform: translateX(15px);
+}
+.file-icon .line .whitespace:nth-child(2) {
+  transform: translateX(30px);
+}
+.file-icon .line .whitespace:nth-child(3) {
+  transform: translateX(40px);
+}
+.file-icon .line .whitespace:nth-child(4) {
+  transform: translateX(50px);
+}
+
+.file-icon .line:nth-child(2) {
+  top: 50px;
+}
+.file-icon .line:nth-child(2) .whitespace:nth-child(1) {
+  transform: translateX(15px);
+}
+.file-icon .line:nth-child(2) .whitespace:nth-child(2) {
+  transform: translateX(35px);
+}
+.file-icon .line:nth-child(2) .whitespace:nth-child(3) {
+  transform: translateX(50px);
+}
+
+.file-icon .line:nth-child(3) {
+  top: 60px;
+}
+.file-icon .line:nth-child(3) .whitespace:nth-child(1) {
+  transform: translateX(10px);
+}
+.file-icon .line:nth-child(3) .whitespace:nth-child(2) {
+  transform: translateX(45px);
+}
+.file-icon .line:nth-child(3) .whitespace:nth-child(3) {
+  transform: translateX(55px);
+}
+
+.monitor-icon {
+  width: 120px;
+  height: 150px;
+
+  position: relative;
+
+  border: 5px solid var(--foreground-color);
+}
+
+.monitor-icon > .corners div:nth-child(3) {
+  height: 25px;
+}
+.monitor-icon > .corners div:nth-child(4) {
+  height: 25px;
+}
+
+.monitor-icon .screen {
+  position: absolute;
+  height: 60px;
+  width: 80px;
+
+  border: 5px solid var(--foreground-color);
+
+  top: 15px;
+  left: 15px;
+}
+
+.monitor-icon .screen .line {
+  position: absolute;
+  left: 5px;
+  display: flex;
+
+  height: 5px;
+  width: 60px;
+
+  background-color: var(--foreground-color);
+}
+
+.monitor-icon .screen .line .whitespace {
+  position: relative;
+  height: 5px;
+  background-color: var(--background-color);
+}
+
+.monitor-icon .screen .line:nth-child(1) {
+  top: 5px;
+}
+.monitor-icon .screen .line:nth-child(1) .whitespace:nth-child(1) {
+  width: 5px;
+  transform: translateX(5px);
+}
+.monitor-icon .screen .line:nth-child(1) .whitespace:nth-child(2) {
+  width: 5px;
+  transform: translateX(10px);
+}
+.monitor-icon .screen .line:nth-child(1) .whitespace:nth-child(3) {
+  width: 5px;
+  transform: translateX(15px);
+}
+.monitor-icon .screen .line:nth-child(1) .whitespace:nth-child(4) {
+  width: 5px;
+  transform: translateX(20px);
+}
+.monitor-icon .screen .line:nth-child(1) .whitespace:nth-child(5) {
+  width: 15px;
+  transform: translateX(25px);
+}
+
+.monitor-icon .screen .line:nth-child(2) {
+  top: 15px;
+}
+.monitor-icon .screen .line:nth-child(2) .whitespace:nth-child(1) {
+  width: 5px;
+  transform: translateX(5px);
+}
+.monitor-icon .screen .line:nth-child(2) .whitespace:nth-child(2) {
+  width: 5px;
+  transform: translateX(10px);
+}
+.monitor-icon .screen .line:nth-child(2) .whitespace:nth-child(3) {
+  width: 5px;
+  transform: translateX(15px);
+}
+.monitor-icon .screen .line:nth-child(2) .whitespace:nth-child(4) {
+  width: 25px;
+  transform: translateX(20px);
+}
+
+.monitor-icon .screen .line:nth-child(3) {
+  top: 25px;
+}
+.monitor-icon .screen .line:nth-child(3) .whitespace:nth-child(1) {
+  width: 5px;
+  transform: translateX(5px);
+}
+.monitor-icon .screen .line:nth-child(3) .whitespace:nth-child(2) {
+  width: 45px;
+  transform: translateX(10px);
+}
+
+.monitor-icon .screen .line:nth-child(4) {
+  top: 35px;
+}
+.monitor-icon .screen .line:nth-child(4) .whitespace:nth-child(1) {
+  width: 5px;
+  transform: translateX(5px);
+}
+.monitor-icon .screen .line:nth-child(4) .whitespace:nth-child(2) {
+  width: 5px;
+  transform: translateX(10px);
+}
+.monitor-icon .screen .line:nth-child(4) .whitespace:nth-child(3) {
+  width: 35px;
+  transform: translateX(15px);
+}
+
+.monitor-icon .slot {
+  height: 5px;
+  width: 35px;
+
+  background-color: var(--foreground-color);
+
+  position: absolute;
+  top: 95px;
+  left: 55px;
+}
+
+.monitor-icon .base {
+  height: 20px;
+  width: 110px;
+
+  border: 5px solid var(--foreground-color);
+  border-bottom: none;
+
+  position: absolute;
+  bottom: 0;
+}
+
+.corners {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.corners div {
+  position: absolute;
+  height: 5px;
+  width: 5px;
+
+  background-color: var(--background-color);
+}
+
+.corners div:nth-child(1) {
+  left: 0;
+  top: 0;
+  transform: translate(-5px, -5px);
+}
+.corners div:nth-child(2) {
+  right: 0;
+  top: 0;
+  transform: translate(5px, -5px);
+}
+.corners div:nth-child(3) {
+  left: 0;
+  bottom: 0;
+  transform: translate(-5px, 5px);
+}
+.corners div:nth-child(4) {
+  right: 0;
+  bottom: 0;
+  transform: translate(5px, 5px);
+}

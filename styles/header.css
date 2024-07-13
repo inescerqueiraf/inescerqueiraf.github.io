@@ -1,0 +1,139 @@
+header {
+  border-bottom: 5px solid var(--foreground-color);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 6em;
+}
+
+header > div span {
+  height: 5px;
+  background-color: var(--foreground-color);
+}
+
+header > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-basis: 5%;
+  height: 80%;
+  padding: 0 10px;
+}
+
+header > div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-basis: 15%;
+  height: 80%;
+  padding: 0 10px;
+}
+header > div:nth-child(5) {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 80%;
+  padding: 0 10px;
+}
+
+header > button {
+  background-color: var(--background-color);
+  height: calc(80% - 10px);
+  border: 5px solid var(--foreground-color);
+  aspect-ratio: 1/1;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+header > button span {
+  width: 100%;
+}
+
+header > button span:first-child {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+header > button span:first-child div {
+  height: 5px;
+  width: 5px;
+  background-color: var(--foreground-color);
+}
+
+header > button span:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header > button span:last-child div:first-child {
+  height: 5px;
+  width: 15px;
+  background-color: var(--foreground-color);
+}
+
+header > button span:last-child div:last-child {
+  height: 5px;
+  width: 25px;
+  border-right: 5px solid var(--foreground-color);
+  border-left: 5px solid var(--foreground-color);
+}
+
+header > a,
+header > a:hover,
+header > a:active,
+header > a:visited {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a > h1 {
+  font-size: 4em;
+  font-weight: normal;
+}
+
+html.dark-mode header button span:last-child div:first-child {
+  height: 5px;
+  width: 25px;
+  border-right: 5px solid var(--foreground-color);
+  border-left: 5px solid var(--foreground-color);
+  background-color: var(--background-color);
+}
+
+html.dark-mode header button span:last-child div:last-child {
+  height: 5px;
+  width: 15px;
+  background-color: var(--foreground-color);
+}
+
+nav {
+  padding: 0.5em;
+  font-size: 2em;
+  border-bottom: 5px solid var(--foreground-color);
+  text-transform: uppercase;
+  height: fit-content;
+}
+
+nav a {
+  margin-right: 1em;
+}
+
+nav a:hover,
+nav a:active,
+nav a:visited {
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 5px solid var(--foreground-color);
+}
+
+nav a[aria-current="page"] {
+  border-bottom: 5px solid var(--foreground-color);
+}

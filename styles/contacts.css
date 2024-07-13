@@ -1,0 +1,50 @@
+#contact_box {
+  border: 5px solid var(--foreground-color);
+  margin: auto;
+  width: 400px;
+  font-size: 1.5em;
+
+  box-shadow: 5px 5px 0px 0px var(--foreground-color);
+  -moz-box-shadow: 5px 5px 0px 0px var(--foreground-color);
+  -webkit-box-shadow: 5px 5px 0px 0px var(--foreground-color);
+}
+
+#contact_box h3 {
+  padding: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 5px solid var(--foreground-color);
+}
+
+#contact_box address {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em 1em;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+#contact_box address > a {
+  margin-top: 0.4em;
+  font-style: normal;
+  width: fit-content;
+  border-bottom: 5px solid transparent;
+}
+
+#contact_box address > a:hover {
+  text-decoration: none;
+  border-bottom: 5px solid var(--foreground-color);
+}
+
+#contact_box > div {
+  margin-bottom: 2px;
+}
+
+#contact_box > div:last-child {
+  width: 100%;
+  min-height: 12px;
+
+  background-color: var(--backgroundground-color);
+  border-top: 5px solid var(--foreground-color);
+  border-bottom: 5px solid var(--foreground-color);
+}

@@ -1,0 +1,67 @@
+#about-me {
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+}
+
+#about-me-box {
+  position: relative;
+  border: 5px solid var(--foreground-color);
+  margin: auto;
+  width: 400px;
+  width: 400px;
+  max-height: 90%;
+  max-width: 40%;
+
+  box-shadow: 5px 5px 0px 0px var(--foreground-color);
+  -moz-box-shadow: 5px 5px 0px 0px var(--foreground-color);
+  -webkit-box-shadow: 5px 5px 0px 0px var(--foreground-color);
+}
+
+#about-me-box > p {
+  padding: 15px 20px;
+  font-size: 1.2em;
+}
+
+#about-me-box > div {
+  margin-bottom: 2px;
+}
+
+#about-me-box #curriculum-vitae {
+  position: absolute;
+  border: 5px solid var(--foreground-color);
+  margin: 0 auto;
+  min-width: fit-content;
+  padding: 5px 8px;
+  font-size: 1.4em;
+
+  right: 10px;
+  bottom: 29px;
+}
+
+#about-me-box #curriculum-vitae:hover {
+  box-shadow: 5px 5px 0px 0px var(--foreground-color);
+  -moz-box-shadow: 5px 5px 0px 0px var(--foreground-color);
+  -webkit-box-shadow: 5px 5px 0px 0px var(--foreground-color);
+
+  transform: translate(-5px, -5px);
+}
+
+#about-me-box #curriculum-vitae a:hover {
+  text-decoration: none;
+}
+
+#about-me-box > div:last-child {
+  width: 100%;
+  min-height: 12px;
+
+  background-color: var(--background-color);
+  border-top: 5px solid var(--foreground-color);
+  border-bottom: 5px solid var(--foreground-color);
+}
+
+img#about-me-media {
+  max-height: 100%;
+  max-width: 40%;
+  object-fit: contain;
+}
