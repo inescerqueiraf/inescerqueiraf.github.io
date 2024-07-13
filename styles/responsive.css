@@ -1,0 +1,96 @@
+@media only screen and (max-width: 768px) {
+  body {
+    margin: 10px 20px 0 10px;
+    border: 5px solid var(--foreground-color);
+    box-shadow: 10px 10px 0px 0px var(--foreground-color);
+    -moz-box-shadow: 10px 10px 0px 0px var(--foreground-color);
+    -webkit-box-shadow: 10px 10px 0px 0px var(--foreground-color);
+
+    height: calc(100vh - 30px);
+  }
+
+  main::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  .folded-bottom > span:first-child {
+    flex-basis: 40px;
+  }
+
+  .folded-bottom > span:first-child div:nth-child(7),
+  .folded-bottom > span:first-child div:nth-child(8),
+  .folded-bottom > span:first-child div:nth-child(9),
+  .folded-bottom > span:first-child div:nth-child(10) {
+    display: none;
+  }
+
+  header {
+    height: 5em;
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding: 0 10px;
+  }
+
+  header > a > h1 {
+    font-size: 2.5em;
+  }
+
+  header > div:nth-child(1),
+  header > div:nth-child(5) {
+    display: none;
+  }
+
+  header > div:nth-child(3) {
+    flex-grow: 1;
+  }
+
+  header > button {
+    gap: 4px;
+  }
+
+  header > button span:first-child {
+    gap: 6px;
+  }
+
+  header > button span:last-child div:first-child {
+    width: 10px;
+  }
+
+  header > button span:last-child div:last-child {
+    width: 20px;
+  }
+
+  html.dark-mode header button span:last-child div:first-child {
+    width: 20px;
+  }
+
+  html.dark-mode header button span:last-child div:last-child {
+    width: 10px;
+  }
+
+  nav {
+    padding: 10px;
+    font-size: 1.4em;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  #contact_box {
+    width: 90%;
+    max-width: 400px;
+
+    font-size: 1.4em;
+  }
+
+  #contact_box h3 {
+    font-size: 1.2em;
+    padding: 0.4em 0 0.2em 0;
+  }
+
+  #contact_box address > a {
+    margin-top: 0.2em;
+  }
+}
