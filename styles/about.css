@@ -2,13 +2,13 @@
   display: flex;
   height: fit-content;
   justify-content: center;
+  margin: 20px 0;
 }
 
 #about-me-box {
   position: relative;
   border: 5px solid var(--foreground-color);
   margin: auto;
-  width: 400px;
   width: 400px;
   max-height: 90%;
   max-width: 40%;
