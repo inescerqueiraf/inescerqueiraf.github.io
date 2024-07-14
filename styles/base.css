@@ -121,6 +121,10 @@ a:visited {
   text-decoration: underline;
 }
 
+div.scroll-padding {
+  height: 50px;
+}
+
 .folded-bottom {
   display: flex;
   flex-wrap: nowrap;
