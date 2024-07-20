@@ -28,6 +28,10 @@ html {
 }
 
 html.dark-mode {
+  --cursor-default: url("cursors/cursor-alt.cur"), auto;
+  --cursor-pointer: url("cursors/pointer-alt.cur"), pointer;
+  --cursor-grabbing: url("cursors/grabbing-alt.cur"), grabbing;
+
   --background-color: blue;
   --foreground-color: #f7ff5f;
 }
