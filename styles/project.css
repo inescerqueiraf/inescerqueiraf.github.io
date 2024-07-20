@@ -80,3 +80,7 @@ figure#project-qr-code figcaption {
   text-align: center;
   margin: 15px 0;
 }
+
+.clickable-media {
+  cursor: pointer;
+}

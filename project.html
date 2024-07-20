@@ -12,45 +12,66 @@ eleventyComputed:
 <h2 id="project-title">{{ project.fields.title }}</h2>
 
 <div id="project-description">
-	<p>{{ project.fields.description | renderRichText }}</p>
+  <p>{{ project.fields.description | renderRichText }}</p>
 </div>
 
 {% if project.fields.mainMedia %}
 <figure id="project-main-media">
-{% if project.fields.mainMedia.fields.file.contentType | isVideo %}
-	<video controls>
-		<source src="{{ project.fields.mainMedia.fields.file.url }}" type="{{ project.fields.mainMedia.fields.file.contentType }}" />
-	</video>
-{% else %}
-	<img src="{{ project.fields.mainMedia.fields.file.url }}" alt="{{ project.fields.mainMedia.fields.title }}" />
-{% endif %}
-	<figcaption>
-		<h3>{{ project.fields.mainMedia.fields.title }}</h3>
-	</figcaption>
+  {% if project.fields.mainMedia.fields.file.contentType | isVideo %}
+  <video class="clickable-media" controls>
+    <source
+      src="{{ project.fields.mainMedia.fields.file.url }}"
+      type="{{ project.fields.mainMedia.fields.file.contentType }}"
+      alt="{{ project.fields.mainMedia.fields.title }}"
+    />
+  </video>
+  {% else %}
+  <img
+    class="clickable-media"
+    src="{{ project.fields.mainMedia.fields.file.url }}"
+    alt="{{ project.fields.mainMedia.fields.title }}"
+  />
+  {% endif %}
+  <figcaption>
+    <h3>{{ project.fields.mainMedia.fields.title }}</h3>
+  </figcaption>
 </figure>
-{% endif %}
-
-{% if project.fields.assets.length > 0 %}
+{% endif %} {% if project.fields.assets.length > 0 %}
 <section id="project-assets">
-	{% for asset in project.fields.assets %}
-	<figure>
-		<img src="{{ asset.fields.file.url }}?w=500" alt="{{ asset.fields.title }}" decoding="async"/>
-		<figcaption>
-			<h3>{{ asset.fields.title }}</h3>
-		</figcaption>
-	</figure>
-	{% endfor %}
+  {% for asset in project.fields.assets %}
+  <figure>
+    {% if asset.fields.file.contentType | isVideo %}
+    <video class="clickable-media" controls>
+      <source
+        src="{{ asset.fields.file.url }}"
+        type="{{ asset.fields.file.contentType }}"
+      />
+    </video>
+    {% else %}
+    <img
+	  class="clickable-media"
+      src="{{ asset.fields.file.url }}?w=500"
+      alt="{{ asset.fields.title }}"
+      decoding="async"
+    />
+    {% endif %}
+    <figcaption>
+      <h3>{{ asset.fields.title }}</h3>
+    </figcaption>
+  </figure>
+  {% endfor %}
 </section>
-{% endif %}
-
-{% if project.fields.qrCode != undefined %}
+{% endif %} {% if project.fields.qrCode != undefined %}
 <figure id="project-qr-code">
-	<img src="{{ project.fields.qrCode.fields.file.url }}?w=750" alt="{{ project.fields.qrCode.fields.title }}" />
-	<figcaption>
-		<h3>{{ project.fields.qrCode.fields.title | default: "QR Code" }}</h3>
-	</figcaption>
+  <img
+    class="clickable-media"
+    src="{{ project.fields.qrCode.fields.file.url }}?w=750"
+    alt="{{ project.fields.qrCode.fields.title }}"
+  />
+  <figcaption>
+    <h3>{{ project.fields.qrCode.fields.title | default: "QR Code" }}</h3>
+  </figcaption>
 </figure>
 {% endif %}
 
-<div class="scroll-padding">
-</div>
+<div class="scroll-padding"></div>
