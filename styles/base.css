@@ -25,6 +25,8 @@ html {
 
   --background-color: white;
   --foreground-color: black;
+
+  cursor: var(--cursor-default);
 }
 
 html.dark-mode {
@@ -37,8 +39,6 @@ html.dark-mode {
 }
 
 body {
-  cursor: var(--cursor-default);
-
   margin: 20px 35px 0 20px;
   border: 5px solid var(--foreground-color);
   box-shadow: 15px 10px 0px 0px var(--foreground-color);
