@@ -43,6 +43,8 @@
 }
 
 #about-me-box #curriculum-vitae:hover {
+  cursor: var(--cursor-pointer);
+
   box-shadow: 5px 5px 0px 0px var(--foreground-color);
   -moz-box-shadow: 5px 5px 0px 0px var(--foreground-color);
   -webkit-box-shadow: 5px 5px 0px 0px var(--foreground-color);
@@ -51,6 +53,7 @@
 }
 
 #about-me-box #curriculum-vitae a:hover {
+  cursor: var(--cursor-pointer);
   text-decoration: none;
 }
 

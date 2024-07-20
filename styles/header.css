@@ -92,7 +92,7 @@ header > a,
 header > a:hover,
 header > a:active,
 header > a:visited {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   text-decoration: none;
 }
 
@@ -130,7 +130,7 @@ nav a {
 nav a:hover,
 nav a:active,
 nav a:visited {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   text-decoration: none;
   border-bottom: 5px solid var(--foreground-color);
 }

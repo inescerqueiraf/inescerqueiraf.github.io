@@ -12,11 +12,12 @@ a.icon {
 }
 
 a.icon:hover {
+  cursor: var(--cursor-pointer);
   text-decoration: none;
 }
 
 a.icon:hover h2 {
-  /* border-bottom: 5px solid var(--foreground-color); */
+  cursor: var(--cursor-pointer);
   font-weight: bold;
 }
 

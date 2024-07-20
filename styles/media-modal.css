@@ -40,10 +40,13 @@
   top: 5px;
   right: 5px;
 
-  cursor: pointer;
   height: 35px;
   width: 35px;
   background-color: var(--foreground-color);
+}
+
+.modal-header .modal-close:hover {
+  cursor: var(--cursor-pointer);
 }
 
 .close-icon-pixel {

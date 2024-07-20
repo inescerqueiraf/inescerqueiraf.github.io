@@ -81,6 +81,10 @@ figure#project-qr-code figcaption {
   margin: 15px 0;
 }
 
-.clickable-media {
-  cursor: pointer;
+.clickable-media:hover {
+  cursor: var(--cursor-pointer);
+}
+
+.clickable-media:active {
+  cursor: var(--cursor-grabbing);
 }

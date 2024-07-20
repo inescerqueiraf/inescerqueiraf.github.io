@@ -5,6 +5,9 @@ module.exports = function (eleventyConfig) {
     "assets/font": "font",
   });
   eleventyConfig.addPassthroughCopy({
+    "assets/cursors": "cursors",
+  });
+  eleventyConfig.addPassthroughCopy({
     "assets/favicons": "favicons",
   });
   eleventyConfig.addPassthroughCopy({
