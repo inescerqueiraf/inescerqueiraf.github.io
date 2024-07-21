@@ -66,8 +66,8 @@
   -webkit-box-shadow: none;
 }
 
-#about-me-box #curriculum-vitae a:active,
-#about-me-box #curriculum-vitae a:hover {
+#about-me-box #curriculum-vitae:active,
+#about-me-box #curriculum-vitae:hover {
   cursor: var(--cursor-pointer);
   text-decoration: none;
 }

@@ -55,7 +55,7 @@ section#project-assets figure {
   flex-direction: column;
   gap: 10px;
   flex-basis: 33%;
-  max-width: 33%;
+  max-width: calc(100% / 3);
   justify-content: center;
   flex-grow: 1;
   padding: 0.5em;
