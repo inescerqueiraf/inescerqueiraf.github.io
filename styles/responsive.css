@@ -14,6 +14,12 @@
     height: 0;
   }
 
+  .vertical-scrollbar-thumb,
+  .vertical-scrollbar-track,
+  .vertical-scrollbar-thumb-background {
+    display: none !important;
+  }
+
   .folded-bottom > span:first-child {
     flex-basis: 40px;
   }
@@ -99,9 +105,13 @@
   }
 
   #about-me {
+    top: 0;
+    transform: translate(-50%, 0);
+    padding: 50px 0;
+
     flex-direction: column-reverse;
     align-items: center;
-    gap: 20px;
+    gap: 50px;
     max-height: unset;
   }
 
@@ -118,6 +128,14 @@
     min-width: unset;
     width: 90%;
     max-width: 400px;
+  }
+
+  #project {
+    width: 100%;
+  }
+
+  h2#project-title {
+    border-right: none;
   }
 
   div#project-description,
