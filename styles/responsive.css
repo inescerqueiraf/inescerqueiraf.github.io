@@ -14,8 +14,10 @@
     height: 0;
   }
 
-  .vertical-scrollbar-thumb,
+  .scrollbar-corner,
+  .horizontal-scrollbar-track,
   .vertical-scrollbar-track,
+  .vertical-scrollbar-thumb,
   .vertical-scrollbar-thumb-background {
     display: none !important;
   }

@@ -43,7 +43,7 @@ const thumbTrackArrowHeight = 65;
     var maxScrollTop = scrollHeight - viewport.height;
     var thumbHeight = Math.pow(viewport.height, 2) / scrollHeight;
     var maxTopOffset =
-      viewport.height - thumbHeight - 2 * thumbTrackArrowHeight;
+      viewport.height - thumbHeight - 3 * thumbTrackArrowHeight - 5;
 
     thumb.scaling = maxTopOffset / maxScrollTop;
     thumb.style.height = `${thumbHeight + 1}px`;
@@ -114,7 +114,7 @@ const thumbTrackArrowHeight = 65;
     perspectiveCtr.style.perspectiveOrigin = "top right";
     perspectiveCtr.style.transformStyle = "preserve-3d";
     perspectiveCtr.style.width = "100%";
-    perspectiveCtr.style.height = "100%";
+    perspectiveCtr.style.height = `calc(100% - ${thumbTrackArrowWidth}px)`;
 
     perspectiveCtr.style.position = "absolute";
     perspectiveCtr.style.pointerEvents = "none";
@@ -191,13 +191,26 @@ const thumbTrackArrowHeight = 65;
   }
 
   const updateTrackSize = (scrollable) => {
-    const thumbTrack = document.querySelector(".vertical-scrollbar-track");
+    const horizontalThumbTrack = document.querySelector(
+      ".horizontal-scrollbar-track"
+    );
+    horizontalThumbTrack.style.display = "block";
+    horizontalThumbTrack.style.width = `${
+      scrollable.clientWidth - thumbTrackArrowHeight
+    }px`;
+    horizontalThumbTrack.style.height = `${thumbTrackArrowWidth + 5}px`;
 
-    thumbTrack.style.height = `${scrollable.clientHeight}px`;
-    thumbTrack.style.width = `${thumbTrackArrowWidth + 5}px`;
+    const verticalThumbTrack = document.querySelector(
+      ".vertical-scrollbar-track"
+    );
+    verticalThumbTrack.style.display = "block";
+    verticalThumbTrack.style.height = `${
+      scrollable.clientHeight - thumbTrackArrowHeight
+    }px`;
+    verticalThumbTrack.style.width = `${thumbTrackArrowWidth + 5}px`;
 
     const thumbTrackArrows = document.querySelectorAll(
-      ".vertical-scrollbar-track-arrow"
+      ".scrollbar-track-arrow"
     );
 
     thumbTrackArrows.forEach((arrow) => {
@@ -212,6 +225,11 @@ const thumbTrackArrowHeight = 65;
     thumbTrackArrows[1].addEventListener("click", () => {
       scrollable.scrollTop += 50;
     });
+
+    const scrollbarCorner = document.querySelector(".scrollbar-corner");
+    scrollbarCorner.style.display = "block";
+    scrollbarCorner.style.width = `${thumbTrackArrowWidth}px`;
+    scrollbarCorner.style.height = `${thumbTrackArrowHeight}px`;
   };
 
   window.addEventListener("load", function () {

@@ -46,6 +46,7 @@ eleventyComputed:
       <source
         src="{{ asset.fields.file.url }}"
         type="{{ asset.fields.file.contentType }}"
+        loading="lazy"
       />
     </video>
     {% else %}
@@ -53,6 +54,7 @@ eleventyComputed:
 	  class="clickable-media"
       src="{{ asset.fields.file.url }}?w=500"
       alt="{{ asset.fields.title }}"
+      loading="lazy"
       decoding="async"
     />
     {% endif %}
@@ -68,6 +70,7 @@ eleventyComputed:
     class="clickable-media"
     src="{{ project.fields.qrCode.fields.file.url }}?w=750"
     alt="{{ project.fields.qrCode.fields.title }}"
+    loading="lazy"
   />
   <figcaption>
     <h3>{{ project.fields.qrCode.fields.title | default: "QR Code" }}</h3>
