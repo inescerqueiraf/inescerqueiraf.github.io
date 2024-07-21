@@ -17,6 +17,34 @@ const addDarkModeToggle = () => {
   });
 };
 
-document.addEventListener("DOMContentLoaded", function () {
+const sizeWelcomeGIF = () => {
+  const main = document.querySelector("main");
+  const welcomeGIF = document.querySelector("#welcome_page_gif");
+
+  if (welcomeGIF) {
+    mainHeight = main.offsetHeight;
+    mainWidth = main.offsetWidth;
+
+    if (mainHeight > mainWidth) {
+      welcomeGIF.style.width = `${0.9 * mainWidth}px`;
+    } else {
+      welcomeGIF.style.marginTop = `${0.05 * main.offsetHeight}px`;
+      welcomeGIF.style.height = `${0.9 * main.offsetHeight}px`;
+    }
+  }
+};
+
+const sizeAboutMeMedia = () => {
+  const aboutMeBox = document.querySelector("#about-me-box");
+  const aboutMeMedia = document.querySelector("#about-me-media");
+
+  if (aboutMeMedia && aboutMeBox) {
+    aboutMeMedia.style.height = `${aboutMeBox.offsetHeight}px`;
+  }
+};
+
+window.addEventListener("load", function () {
   addDarkModeToggle();
+  sizeWelcomeGIF();
+  sizeAboutMeMedia();
 });

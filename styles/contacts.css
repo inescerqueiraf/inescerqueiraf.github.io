@@ -1,6 +1,10 @@
 #contact_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   border: 5px solid var(--foreground-color);
-  margin: 2em auto;
   width: 400px;
   font-size: 1.5em;
 

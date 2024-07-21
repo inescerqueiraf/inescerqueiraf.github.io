@@ -1,9 +1,13 @@
 #about-me {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   display: flex;
   height: fit-content;
   width: 100%;
   justify-content: center;
-  margin: 20px 0;
   max-height: 90%;
   gap: 50px;
 }
@@ -62,6 +66,7 @@
   -webkit-box-shadow: none;
 }
 
+#about-me-box #curriculum-vitae a:active,
 #about-me-box #curriculum-vitae a:hover {
   cursor: var(--cursor-pointer);
   text-decoration: none;

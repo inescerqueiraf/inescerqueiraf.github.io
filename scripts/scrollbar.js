@@ -46,7 +46,7 @@ const thumbTrackArrowHeight = 65;
       viewport.height - thumbHeight - 2 * thumbTrackArrowHeight;
 
     thumb.scaling = maxTopOffset / maxScrollTop;
-    thumb.style.height = `${thumbHeight}px`;
+    thumb.style.height = `${thumbHeight + 1}px`;
     thumb.style.width = `${thumbTrackArrowWidth}px`;
 
     thumbBackground.scaling = maxTopOffset / maxScrollTop;
@@ -114,6 +114,7 @@ const thumbTrackArrowHeight = 65;
     perspectiveCtr.style.perspectiveOrigin = "top right";
     perspectiveCtr.style.transformStyle = "preserve-3d";
     perspectiveCtr.style.width = "100%";
+    perspectiveCtr.style.height = "100%";
 
     perspectiveCtr.style.position = "absolute";
     perspectiveCtr.style.pointerEvents = "none";
