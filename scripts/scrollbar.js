@@ -184,6 +184,7 @@ const thumbTrackArrowHeight = 65;
 
     var f = function () {
       updateSize(scrollable);
+      updateTrackSize(scrollable);
     };
     requestAnimationFrame(f);
     window.addEventListener("resize", f);
