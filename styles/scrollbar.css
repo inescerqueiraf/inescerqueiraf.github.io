@@ -1,26 +1,45 @@
-main {
-  --sb-track-color: var(--background-color);
-  --sb-thumb-color: var(--foreground-color);
-  --sb-size: 40px;
-}
-
 main::-webkit-scrollbar {
-  width: var(--sb-size);
-  height: var(--sb-size);
+  height: 0;
+  width: 0;
 }
 
 main::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
+  background: transparent;
 }
 
 main::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 1px;
-  border: 5px solid var(--sb-track-color);
+  background: transparent;
 }
 
 @supports not selector(::-webkit-scrollbar) {
   main {
-    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    scrollbar-color: transparent transparent;
   }
+}
+
+.vertical-scrollbar {
+  width: 40px;
+  /* background-color: red; */
+  background-color: var(--backgroundground-color);
+  border: 5px solid var(--foreground-color);
+  /* border-bottom: 5px solid var(--foreground-color); */
+}
+
+.vertical-scrollbar-arrow-up {
+  position: sticky;
+  top: 0px;
+  left: 100%;
+
+  width: 40px;
+  height: 40px;
+  border: 5px solid var(--foreground-color);
+}
+
+.vertical-scrollbar-arrow-down {
+  position: sticky;
+  bottom: 0;
+
+  width: 40px;
+  height: 40px;
+  border: 5px solid var(--foreground-color);
 }
