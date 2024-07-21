@@ -45,7 +45,7 @@ const createOverlayMediaModal = (modalContent) => {
   modal.appendChild(modalHeader);
   modal.appendChild(modalContent);
   overlay.appendChild(modal);
-  document.body.appendChild(overlay);
+  document.body.append(overlay);
 
   overlay.addEventListener("click", function () {
     document.body.removeChild(overlay);

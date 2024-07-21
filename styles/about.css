@@ -19,6 +19,8 @@
   box-shadow: 5px 5px 0px 0px var(--foreground-color);
   -moz-box-shadow: 5px 5px 0px 0px var(--foreground-color);
   -webkit-box-shadow: 5px 5px 0px 0px var(--foreground-color);
+
+  pointer-events: all;
 }
 
 #about-me-box > p {
@@ -40,16 +42,24 @@
 
   right: 10px;
   bottom: 29px;
-}
-
-#about-me-box #curriculum-vitae:hover {
-  cursor: var(--cursor-pointer);
 
   box-shadow: 5px 5px 0px 0px var(--foreground-color);
   -moz-box-shadow: 5px 5px 0px 0px var(--foreground-color);
   -webkit-box-shadow: 5px 5px 0px 0px var(--foreground-color);
 
   transform: translate(-5px, -5px);
+}
+
+#about-me-box #curriculum-vitae:hover {
+  cursor: var(--cursor-pointer);
+}
+
+#about-me-box #curriculum-vitae:active {
+  transform: translate(0px, 0px);
+
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 #about-me-box #curriculum-vitae a:hover {

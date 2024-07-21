@@ -1,3 +1,6 @@
+const thumbTrackArrowWidth = 65;
+const thumbTrackArrowHeight = 65;
+
 (function (scope) {
   var dragging = false;
   var lastY = 0;
@@ -34,22 +37,21 @@
   // the amount of overflow.
   function updateSize(scrollable) {
     var thumb = scrollable.thumb;
+    var thumbBackground = scrollable.thumbBackground;
     var viewport = scrollable.getBoundingClientRect();
     var scrollHeight = scrollable.scrollHeight;
     var maxScrollTop = scrollHeight - viewport.height;
     var thumbHeight = Math.pow(viewport.height, 2) / scrollHeight;
-    var maxTopOffset = viewport.height - thumbHeight;
-
-    console.log({
-      scrollHeight,
-      viewportHeight: viewport.height,
-      maxScrollTop,
-      thumbHeight,
-      maxTopOffset,
-    });
+    var maxTopOffset =
+      viewport.height - thumbHeight - 2 * thumbTrackArrowHeight;
 
     thumb.scaling = maxTopOffset / maxScrollTop;
     thumb.style.height = `${thumbHeight}px`;
+    thumb.style.width = `${thumbTrackArrowWidth}px`;
+
+    thumbBackground.scaling = maxTopOffset / maxScrollTop;
+    thumbBackground.style.height = `${scrollHeight}px`;
+    thumbBackground.style.width = `${thumbTrackArrowWidth}px`;
 
     if (scrollable.isIOS) {
       thumb.nextElementSibling.style.marginTop = `-${thumbHeight}px`;
@@ -57,7 +59,13 @@
       thumb.style.transform = `
 		  translateZ(${z}px)
 		  scale(${1 - z})
+		  translateY(${thumbTrackArrowHeight}px)
 		`;
+      thumbBackground.style.transform = `
+		  translateZ(${z}px)
+		  scale(${1 - z})
+	  translateY(-${maxTopOffset}px)
+  `;
     } else {
       thumb.style.transform = `
 		   scale(${1 / thumb.scaling})
@@ -68,7 +76,19 @@
 			 0, 0, 0, -1
 		   )
 		   translateZ(${-2 + 1 - 1 / thumb.scaling}px)
+		   translateY(${thumbTrackArrowHeight}px)
 		`;
+      thumbBackground.style.transform = `
+      	   scale(${1 / thumb.scaling})
+      	   matrix3d(
+      		 1, 0, 0, 0,
+      		 0, 1, 0, 0,
+      		 0, 0, 1, 0,
+      		 0, 0, 0, -1
+      	   )
+      	   translateZ(${-2 + 1 - 1 / thumb.scaling}px)
+		   translateY(-${maxTopOffset}px)
+       `;
     }
   }
 
@@ -104,18 +124,25 @@
 
     scrollable.insertBefore(perspectiveCtr, scrollable.firstChild);
     var thumb = document.createElement("div");
-    thumb.classList.add("vertical-scrollbar");
+    thumb.classList.add("vertical-scrollbar-thumb");
     thumb.style.pointerEvents = "initial";
     thumb.style.position = "absolute";
     thumb.style.transformOrigin = "top right";
     thumb.style.top = "0";
-    console.log({
-      scrollableClientWidth: scrollable.clientWidth,
-      scrollableWidth: scrollable.getBoundingClientRect().width,
-    });
     thumb.style.right = "0px";
     perspectiveCtr.insertBefore(thumb, perspectiveCtr.firstChild);
     scrollable.thumb = thumb;
+
+    var thumbBackground = document.createElement("div");
+    thumbBackground.classList.add("vertical-scrollbar-thumb-background");
+    thumbBackground.style.position = "absolute";
+    thumbBackground.style.pointerEvents = "initial";
+    thumbBackground.style.transformOrigin = "top right";
+    thumbBackground.style.top = "0";
+    thumbBackground.style.right = "0px";
+    perspectiveCtr.insertBefore(thumbBackground, perspectiveCtr.firstChild);
+    scrollable.thumbBackground = thumbBackground;
+
     scrollable.perspectiveCtr = perspectiveCtr;
 
     // We are on Safari, where we need to use the sticky trick!
@@ -162,10 +189,35 @@
     return f;
   }
 
+  const updateTrackSize = (scrollable) => {
+    const thumbTrack = document.querySelector(".vertical-scrollbar-track");
+
+    thumbTrack.style.height = `${scrollable.clientHeight}px`;
+    thumbTrack.style.width = `${thumbTrackArrowWidth + 5}px`;
+
+    const thumbTrackArrows = document.querySelectorAll(
+      ".vertical-scrollbar-track-arrow"
+    );
+
+    thumbTrackArrows.forEach((arrow) => {
+      arrow.style.height = `${thumbTrackArrowHeight}px`;
+      arrow.style.width = `${thumbTrackArrowWidth}px`;
+    });
+
+    thumbTrackArrows[0].addEventListener("click", () => {
+      scrollable.scrollTop -= 50;
+    });
+
+    thumbTrackArrows[1].addEventListener("click", () => {
+      scrollable.scrollTop += 50;
+    });
+  };
+
   window.addEventListener("load", function () {
     const scrollable = document.querySelector(".vertical-scrollbar-container");
 
     makeCustomScrollbar(scrollable);
     updateSize(scrollable);
+    updateTrackSize(scrollable);
   });
 })(self);

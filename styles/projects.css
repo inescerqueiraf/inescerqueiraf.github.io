@@ -9,6 +9,7 @@ div.projects-wrapper {
 a.icon {
   width: 150px;
   text-align: center;
+  pointer-events: all;
 }
 
 a.icon:hover {

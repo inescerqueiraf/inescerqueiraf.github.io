@@ -17,29 +17,130 @@ main::-webkit-scrollbar-thumb {
   }
 }
 
-.vertical-scrollbar {
-  width: 40px;
-  /* background-color: red; */
-  background-color: var(--backgroundground-color);
-  border: 5px solid var(--foreground-color);
-  /* border-bottom: 5px solid var(--foreground-color); */
-}
-
-.vertical-scrollbar-arrow-up {
-  position: sticky;
-  top: 0px;
-  left: 100%;
-
-  width: 40px;
-  height: 40px;
+.vertical-scrollbar-thumb {
+  background-color: var(--background-color);
   border: 5px solid var(--foreground-color);
 }
 
-.vertical-scrollbar-arrow-down {
-  position: sticky;
+.vertical-scrollbar-track {
+  position: absolute;
   bottom: 0;
+  right: 0;
 
-  width: 40px;
-  height: 40px;
-  border: 5px solid var(--foreground-color);
+  border-left: 5px solid var(--foreground-color);
+  pointer-events: none;
+}
+
+.vertical-scrollbar-thumb-background {
+  background: repeating-conic-gradient(
+      var(--foreground-color) 0% 25%,
+      var(--background-color) 0% 50%
+    )
+    50% / 10px 10px;
+}
+
+.vertical-scrollbar-track-arrow {
+  pointer-events: all;
+  position: absolute;
+
+  background-color: var(--background-color);
+}
+
+.vertical-scrollbar-track-arrow:nth-child(1) {
+  top: 0;
+  border-top: 5px solid var(--foreground-color);
+  transform: scaleY(-1);
+}
+
+.vertical-scrollbar-track-arrow:nth-child(2) {
+  bottom: 0;
+  border-top: 5px solid var(--foreground-color);
+}
+
+.vertical-scrollbar-track-arrow div {
+  position: absolute;
+  height: 5px;
+  width: 5px;
+
+  background-color: var(--foreground-color);
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(1) {
+  top: 5px;
+  left: 15px;
+
+  width: 35px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(2) {
+  top: 10px;
+  left: 15px;
+
+  height: 15px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(3) {
+  top: 10px;
+  left: 45px;
+
+  height: 15px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(4) {
+  top: 25px;
+  left: 5px;
+
+  width: 15px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(5) {
+  top: 25px;
+  left: 45px;
+
+  width: 15px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(6) {
+  top: 30px;
+  left: 10px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(7) {
+  top: 30px;
+  left: 50px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(8) {
+  top: 35px;
+  left: 15px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(9) {
+  top: 35px;
+  left: 45px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(10) {
+  top: 40px;
+  left: 20px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(11) {
+  top: 40px;
+  left: 40px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(12) {
+  top: 45px;
+  left: 25px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(13) {
+  top: 45px;
+  left: 35px;
+}
+
+.vertical-scrollbar-track-arrow div:nth-child(14) {
+  top: 50px;
+  left: 30px;
 }

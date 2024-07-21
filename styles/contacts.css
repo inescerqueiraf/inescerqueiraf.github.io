@@ -7,6 +7,8 @@
   box-shadow: 5px 5px 0px 0px var(--foreground-color);
   -moz-box-shadow: 5px 5px 0px 0px var(--foreground-color);
   -webkit-box-shadow: 5px 5px 0px 0px var(--foreground-color);
+
+  pointer-events: all;
 }
 
 #contact_box h3 {

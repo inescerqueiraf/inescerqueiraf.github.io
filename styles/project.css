@@ -1,10 +1,15 @@
+#project {
+  width: calc(100% - 65px);
+}
+
 h2#project-title {
+  height: 65px;
   position: sticky;
   top: 0;
   width: 100%;
   text-align: center;
   text-transform: uppercase;
-  padding: 1em 0;
+  padding: 17px 0;
   border-bottom: 5px solid var(--foreground-color);
   border-right: 5px solid var(--foreground-color);
   background-color: var(--background-color);
@@ -79,6 +84,10 @@ figure#project-qr-code figcaption {
   text-transform: uppercase;
   text-align: center;
   margin: 15px 0;
+}
+
+.clickable-media {
+  pointer-events: all;
 }
 
 .clickable-media:hover {
