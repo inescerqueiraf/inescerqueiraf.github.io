@@ -63,26 +63,9 @@ eleventyComputed:
     </figcaption>
   </figure>
   {% endfor %}
-  {% if project.fields.qrCode != undefined %}
-  <figure>
-    <img
-      class="clickable-media"
-      src="{{ project.fields.qrCode.fields.file.url }}?w=750"
-      alt="{{ project.fields.qrCode.fields.title }}"
-      loading="lazy"
-    />
-  </figure>
-  <figure>
-    <img
-      class="clickable-media"
-      src="{{ project.fields.qrCode.fields.file.url }}?w=750"
-      alt="{{ project.fields.qrCode.fields.title }}"
-      loading="lazy"
-    />
-  </figure>
-  {% endif %}
 </section>
-{% endif %} 
+{% endif %}
+
 {% if project.fields.qrCode != undefined %}
 <figure id="project-qr-code">
   <img
