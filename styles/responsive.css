@@ -33,6 +33,11 @@
     display: none;
   }
 
+  .overlay {
+    top: -15px;
+    left: -15px;
+  }
+
   header {
     height: 5em;
     flex-direction: row-reverse;
